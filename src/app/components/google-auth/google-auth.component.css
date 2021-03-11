@@ -1,0 +1,96 @@
+.cardList {
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 160px;
+}
+
+/* Column Gap */
+.cardList > * {
+box-sizing: border-box;
+}
+.cardList > *:not(:last-child) {
+margin-right: 32px;
+}
+/* Item sizing */
+.cardListItem {
+flex: 0 1 calc(33.3% - 32px);
+}
+
+.cardList {
+    display: flex;
+flex-direction: row;
+flex-wrap:inherit;
+justify-content: center;
+margin-top: 160px;
+
+}
+
+/* Column Gap */
+.cardList > * {
+box-sizing: border-box;
+}
+.cardList > *:not(:last-child) {
+margin-right: 32px;
+}
+/* Item sizing */
+.cardListItem {
+flex: 0 1 calc(33.3% - 32px);
+}
+.align{
+    margin-left: 44px;
+}
+
+.btn {
+	color: #0099CC; 
+	/* Text color */
+	background-color: rgba(36, 146, 173, 0.993); /* Remove background color */
+	border: 2px solid #0099CC; /* Border thickness, line style, and color */
+	border-radius: 70px; /* Adds curve to border corners */
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.btn1 {
+	color: #0099CC; 
+	/* Text color */
+	background-color: white; /* Remove background color */
+	border: 2px solid #0099CC; /* Border thickness, line style, and color */
+	border-radius: 70px; /* Adds curve to border corners */
+	border: none;
+	color: black;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;    
+}
+
+.box {
+    margin-left:5%;
+}
+
+.container {
+    display: flex;
+  }
+
+  
+.btn-block:hover
+{
+background-image:none;
+background-color:#00c3ff;
+}

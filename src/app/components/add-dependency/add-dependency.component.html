@@ -1,0 +1,35 @@
+
+
+<mat-form-field class="example-chip-list">
+
+  <mat-label><h5>Add Dependencies</h5></mat-label>
+  
+  <mat-chip-list #chipList aria-label="Fruit selection">
+ 
+          <mat-chip 
+      *ngFor="let session of temp_task;let i = index"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(session)">
+      
+   <a href="#">  {{session}} </a>
+
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="New Task..."
+      #fruitInput
+      [formControl]="fruitCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let session of subtasks ">
+      {{session.subtaskName}}
+    </mat-option>
+  </mat-autocomplete>
+
+</mat-form-field>
+

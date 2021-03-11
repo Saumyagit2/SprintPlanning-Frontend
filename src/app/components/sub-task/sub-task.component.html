@@ -1,0 +1,35 @@
+ <div class="cardList">
+  <mat-card class="box shadow-lg p-3 mb-5 bg-white rounded w-25 p-3">
+    <mat-card-header>
+      <mat-card-title class="align">Sub Task</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form  w-100 p-3" [formGroup]="sessionForm">
+     
+      <mat-card-content>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input matInput placeholder="Sub TaskName"  formControlName="taskname">
+        </mat-form-field>
+   <br>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input matInput placeholder="Description"  formControlName="description" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input type="date" matInput  placeholder="Start-Date"  formControlName="start">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input type="date" matInput placeholder="End-Date" formControlName="end">
+        </mat-form-field>
+        <br>
+      
+      </mat-card-content>
+
+      <button mat-stroked-button color="primary" class="btn-block" (click)="addToList()">Save</button>
+
+    </form>
+     
+  </mat-card>
+
+</div> 

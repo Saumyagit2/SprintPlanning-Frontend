@@ -1,0 +1,51 @@
+<!-- <hr>
+
+<div *ngFor="let todo of todoItems">
+
+   <button style="margin: 10px;" mat-button color="primary" (click)="updateSelected(todo)">{{ todo.title }}</button>
+</div>
+
+<mat-card style="margin: 10px; width: 300px; display: inline-block;"*ngFor="let subtask of subtasks;let i = index">
+    
+    <mat-card-title>{{subtask.subtaskName}}</mat-card-title>
+    <mat-card-title>{{subtask.description}}</mat-card-title>
+    <mat-card-content>{{subtask.startDate}}</mat-card-content>
+    <mat-card-content>{{subtask.endDate}}</mat-card-content>
+
+    
+    <button mat-raised-button style="margin: 20px;"color="primary" (click)="updateSubTask(i)">Update</button>
+    <button mat-raised-button color="primary" (click)="removesubTask(subtask.subtaskId)">Delete</button>
+   
+</mat-card>
+ -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <hr>
+ <div *ngFor="let subtask of subtasks;let i = index">
+     <mat-expansion-panel  >
+         <mat-expansion-panel-header>
+           <mat-panel-title>
+             {{subtask.subtaskName}}
+           </mat-panel-title>
+           <mat-panel-description>
+             {{subtask.description}}
+           </mat-panel-description>
+         </mat-expansion-panel-header>
+         <p>{{subtask.startDate}}</p>
+         <p>Last Modified by : Anirudh</p>
+         <button mat-icon-button  style="margin: 7px;" (click)="updateSubTask(i)"><mat-icon>edit</mat-icon></button>
+         <button mat-icon-button  style="margin: 7px;"(click)="removesubTask(subtask.subtaskId)"><mat-icon>delete_outline</mat-icon></button>
+         
+       </mat-expansion-panel>
+       
+     
+       
+     <!-- <div *ngFor="let todo of todoItems">
+     
+        <button style="margin: 10px;" mat-button color="primary" (click)="updateSelected(todo)">{{ todo.title }}</button>
+     </div> -->
+ </div>
+ 
+ <button mat-raised-button style="margin: 20px;"color="primary" (click)="addSubTask()">AddSubTask</button>
+ 
+ 
