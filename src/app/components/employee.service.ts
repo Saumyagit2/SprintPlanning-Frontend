@@ -54,6 +54,9 @@ export class EmployeeService {
   {
     return this.http.get("http://localhost:8080/getAllSubtasks/"+id);
   }
-
+  public AuthenticateEmployeeByName(username)
+  {
+   return this.http.get("http://localhost:8080/searchUser/"+username);
+  }
 
 }

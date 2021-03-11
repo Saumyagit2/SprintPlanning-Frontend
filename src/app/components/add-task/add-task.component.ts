@@ -28,8 +28,7 @@ export class AddTaskComponent implements OnInit
 
   ngOnInit(): void{
     this.sessionForm = new FormGroup({
-   //   taskname : new FormControl('', Validators.required),
-      taskname : new FormControl(''),
+     taskname : new FormControl('', Validators.required),
       description : new FormControl('', Validators.required),
       start : new FormControl(''),
       end : new FormControl('')
@@ -59,22 +58,12 @@ export class AddTaskComponent implements OnInit
   }*/
   onClick()
   {
-    const session :Session = {
-      taskname : this.taskname.value,
-      description : this.description.value,
-      start: this.start.value,
-      end: this.end.value
-    }
+   
     //console.log(this.user.name);
     const temp_task:PrimaryTask = {
       taskName : this.taskname.value,
       description : this.description.value,
       employeeId:1,
-      startDate: this.start.value,
-      endDate: this.end.value,
-      estimatedHours :20,
-      creatorId:1,
-      modifierId:1
     }
     this.task=temp_task;
     let response =   this.service.addPrimaryTask(this.task);

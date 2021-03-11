@@ -1,0 +1,25 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.fonty{
+  
+  font-weight: bold;
+  font-size: large;
+}
+.subtaskfont{
+  color: rgb(53, 66, 184);
+}
+.description{
+   color: black;
+}

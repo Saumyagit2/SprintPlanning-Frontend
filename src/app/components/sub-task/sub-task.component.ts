@@ -23,80 +23,74 @@ export class SubTaskComponent implements OnInit {
   constructor(private router:Router,private sessionService:SessionService,private service:EmployeeService 
     ,private subtaskservice:SubtaskserviceService) { }
 
-  ngOnInit(): void{
-    this.sessionForm = new FormGroup({
-   //   taskname : new FormControl('', Validators.required),
-      taskname : new FormControl(''),
-      description : new FormControl('', Validators.required),
-      start : new FormControl(''),
-      end : new FormControl('')
-    });
-
-  }
-  get taskname() {
-    return this.sessionForm.get('taskname') as FormControl;
-  }
-
-  get description() {
-    return this.sessionForm.get('description') as FormControl;
-  }
-  get start() {
-    return this.sessionForm.get('start') as FormControl;
-  }
-  get end() {
-    return this.sessionForm.get('end') as FormControl;
-  }
-  // addToList(){
-  //   const session:Session = {
-  //     taskname : this.taskname.value,
-  //     description : this.description.value,
-  //     start : this.start.value,
-  //     end: this.end.value
-  //   }
-  //   this.sessionService.addSessions(session);
-  //   this.router.navigateByUrl('/subtask-list');
-  // }
-  addToList()
-  {
-    const session :Session = {
-      taskname : this.taskname.value,
-      description : this.description.value,
-      start: this.start.value,
-      end: this.end.value
-    }
-    //console.log(this.user.name);
-    const temp_task:SubTask = {
-      subtaskName : this.taskname.value,
-      description : this.description.value,
-      primarytaskId:this.subtaskservice.getPrimaryid(),
-      employeeId:1,
-      startDate: this.start.value,
-      endDate: this.end.value,
-      estimatedHours :20,
-      creatorId:1,
-      modifierId:1
-    }
-    this.subtask=temp_task;
-    let response =   this.service.addSubTask(this.subtask);
-        response.subscribe(data => {
-          this.message =   data;
-          
-          console.log(this.message);
-        })
-
-        let respon = this.service.getAllTasks();
-        respon.subscribe(
-          data=>this.subtasks=data
-          );
-    this.subtaskservice.setSubtasks(this.subtasks); 
-    this.sessionService.addSessions(session);
-    console.log(session);
-    this.router.navigateByUrl('/task-list');
-  }
+    ngOnInit(): void{
+      this.sessionForm = new FormGroup({
+      taskname : new FormControl('', Validators.required),
+        description : new FormControl('', Validators.required),
+        status:new FormControl(''),
+        priority:new FormControl(''),
+        start : new FormControl(''),
+        end : new FormControl('')
+      });
   
-  deleteSession(sessionToDelete: Session){
-    this.sessionService.deleteSession(sessionToDelete) 
-  }
+    }
+    get taskname() {
+      return this.sessionForm.get('taskname') as FormControl;
+    }
+  
+    get description() {
+      return this.sessionForm.get('description') as FormControl;
+    }
+    get status()
+    {
+      return this.sessionForm.get('status') as FormControl;
+    }
+    get priority()
+    {
+      return this.sessionForm.get('priority') as FormControl;
+    }
+    get start() {
+      return this.sessionForm.get('start') as FormControl;
+    }
+    get end() {
+      return this.sessionForm.get('end') as FormControl;
+    }
+  
+    addToList()
+    {
+      const session :Session = {
+        taskname : this.taskname.value,
+        description : this.description.value,
+        start: this.start.value,
+        end: this.end.value
+      }
+      //console.log(this.user.name);
+      const temp_task:SubTask = {
+        subtaskName : this.taskname.value,
+        description : this.description.value,
+        primarytaskId:this.subtaskservice.getPrimaryid(),
+        estimatedHours :20,
+        status:this.status.value,
+        priority:this.priority.value,
+        startDate: this.start.value,
+        endDate: this.end.value,
+     
+      }
+      this.subtask=temp_task;
+      let response =   this.service.addSubTask(this.subtask);
+          response.subscribe(data => {
+            this.message =   data;
+            
+            console.log(this.message);
+          })
+  
+          let respon = this.service.getAllTasks();
+          respon.subscribe(
+            data=>this.subtasks=data
+            );
+      this.subtaskservice.setSubtasks(this.subtasks); 
+      this.router.navigateByUrl('/task-list');
+    }
 }
   
   

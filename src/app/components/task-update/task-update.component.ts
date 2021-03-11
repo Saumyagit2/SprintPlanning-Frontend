@@ -32,8 +32,7 @@ ngOnInit(): void {
   this.sessionForm = new FormGroup({
   taskname : new FormControl(this.data.taskName, Validators.required),
   description : new FormControl(this.data.description, Validators.required),
-  start : new FormControl(this.data.startDate),
-  end: new FormControl(this.data.endDate)
+  
   });
   }
 
@@ -44,31 +43,16 @@ return this.sessionForm.get('taskname') as FormControl;
 get description() {
 return this.sessionForm.get('description') as FormControl;
 }
-get start() {
-  return this.sessionForm.get('start') as FormControl;
-  }
-get end() {
-    return this.sessionForm.get('end') as FormControl;
-  }
+
 
   updateValue(){
-    const session:Session = {
-    taskname : this.taskname.value,
-    description : this.description.value,
-    start: this.start.value,
-    end: this.end.value
-    }
+    
 
     const temp_task:any = {
       taskId:this.data.taskId,
       taskName : this.taskname.value,
       description : this.description.value,
       employeeId:1,
-      startDate: this.start.value,
-      endDate: this.end.value,
-      estimatedHours :20,
-      creatorId:1,
-      modifierId:1
     }
     this.task=temp_task;
     this.dialogRef.close();

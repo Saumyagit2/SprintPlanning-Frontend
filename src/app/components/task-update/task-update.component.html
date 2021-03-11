@@ -1,26 +1,14 @@
 <div> <form [formGroup]="sessionForm">
   <mat-form-field appearance="fill">
       <mat-label>Task Name</mat-label>
-      <input matInput formControlName="taskname">
+      <input matInput formControlName="taskname" autocomplete="off">
     </mat-form-field>
  
     <mat-form-field appearance="fill">
       <mat-label>Task Description</mat-label>
       <input matInput formControlName="description">
     </mat-form-field>
-   
-    <mat-form-field appearance="fill">
-      <mat-label> Start Date</mat-label>
-      <input matInput formControlName="start">
-    </mat-form-field>
-   
-    <mat-form-field appearance="fill">
-      <mat-label> End Date</mat-label>
-      <input matInput formControlName="end">
-    </mat-form-field>
-   
+
     <button mat-stroked-button color="primary"  class="btn-block" (click)="updateValue()">Update</button>
   </form>
 </div>
-
-

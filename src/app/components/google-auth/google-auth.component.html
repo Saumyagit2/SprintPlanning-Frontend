@@ -10,11 +10,11 @@
     <form class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width w-100 p-4">
-          <input matInput placeholder="Username">
+          <input matInput placeholder="Username"  name="username" [(ngModel)]="username" >
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width w-100 p-4">
-          <input matInput placeholder="Password">
+          <input matInput autocomplete="off" type="password" placeholder="Password" name="password" [(ngModel)]="password" >
           
         </mat-form-field>
         <br>

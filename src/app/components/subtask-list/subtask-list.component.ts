@@ -77,6 +77,8 @@ export class SubtaskListComponent implements OnInit {
       data:{
         subtaskName : this.subtasks[i].subtaskName,
         description:this.subtasks[i].description,
+        status:this.subtasks[i].status,
+        priority:this.subtasks[i].priority,
         startDate:this.subtasks[i].startDate,
         endDate:this.subtasks[i].endDate,
         index:i,

@@ -14,23 +14,50 @@ export class GoogleAuthComponent implements OnInit {
  
   myImage : string ='assets/images/sprint_img.jpeg'; 
   message:any;
+  password:any;
+  username:string;
 
   ngOnInit() {
+    
   }
+
   form: FormGroup = new FormGroup({});
   user: any;
   constructor(private _socioAuthServ: AuthService,private router:Router, private service:EmployeeService) { }
 
- /*singIn(platform : string): void {
-    platform = GoogleLoginProvider.PROVIDER_ID;
-    this._socioAuthServ.signIn(platform).then(
-      (response) => {
-        console.log(platform + " logged in user data is= " , response);
-        this.user = response;
-        this.router.navigateByUrl('/add-task');
-      }
-    );
-  }*/
+  public signIn()
+  {
+    if(!this.username)
+    {
+      alert("Please Enter Username to continue");
+    }
+   let response=this.service.AuthenticateEmployeeByName(this.username);
+ 
+   response.subscribe(data=>
+     {
+     this.message=data;
+     var pswd=this.message.password;
+     var pswd2=this.password;
+     if(this.message && (pswd===pswd2))
+     {
+      
+       this.router.navigateByUrl('/task-list');
+     }
+     else if(this.message && pswd2=='')
+     {
+       alert("Please Enter password to continue");
+     }
+     else if(this.username=='')
+     {
+      alert("Please Enter Username to continue");
+     }
+     else
+     {
+       alert("Invalid Credentials");
+     }
+     }
+     );
+ }
 
  singInWithGoogle(platform : string): void {
     platform = GoogleLoginProvider.PROVIDER_ID;
@@ -49,9 +76,7 @@ export class GoogleAuthComponent implements OnInit {
       });
     }
 
-  signIn(){
-  this.router.navigateByUrl('/task-list');
-  }
+ 
 
   
   signOut(): void {

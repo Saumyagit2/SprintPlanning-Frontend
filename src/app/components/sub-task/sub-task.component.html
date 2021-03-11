@@ -16,6 +16,15 @@
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width  w-100 p-3">
+          <input matInput placeholder="Status"  formControlName="status" >
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input matInput placeholder="Priority"  formControlName="priority" >
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width  w-100 p-3">
           <input type="date" matInput  placeholder="Start-Date"  formControlName="start">
         </mat-form-field>
         <br>
@@ -26,10 +35,14 @@
       
       </mat-card-content>
 
+      <app-add-dependency></app-add-dependency>
+
       <button mat-stroked-button color="primary" class="btn-block" (click)="addToList()">Save</button>
 
     </form>
-     
+   
+   
+
   </mat-card>
 
 </div> 
