@@ -19,6 +19,7 @@
 }
 .subtaskfont{
   color: rgb(53, 66, 184);
+  font-weight: bold;
 }
 .description{
    color: black;

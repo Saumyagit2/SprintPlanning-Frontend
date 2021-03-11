@@ -1,7 +1,6 @@
 import { Component,Inject, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SessionService } from '../session.service'
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import {Session} from '../modal/session'
 import { TaskListComponent } from '../task-list/task-list.component';
@@ -46,8 +45,6 @@ return this.sessionForm.get('description') as FormControl;
 
 
   updateValue(){
-    
-
     const temp_task:any = {
       taskId:this.data.taskId,
       taskName : this.taskname.value,
@@ -56,18 +53,12 @@ return this.sessionForm.get('description') as FormControl;
     }
     this.task=temp_task;
     this.dialogRef.close();
-  //console.log(this.data.taskId);
-       let response = this.service.updateTask(this.task);
-       response.subscribe(data=>this.tasks=data);
-      // this.router.navigateByUrl('/task-list');
-      window.location.reload();
-    //   this.router.navigateByUrl('/task-list', { skipLocationChange: false }).then(() => {
-    //     this.router.navigate(['/task-update']);
-    // });
-    // this.taskservice.updateTask(this.data.index,this.task);
-     this.taskservice.setTasks(this.tasks);
+    let response = this.service.updateTask(this.task);
+    response.subscribe(data=>this.tasks=data);
+    window.location.reload();
+    this.taskservice.setTasks(this.tasks);
     
-       //this.router.navigateByUrl('/task-list');
+       
     }
 
 }

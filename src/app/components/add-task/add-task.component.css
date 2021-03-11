@@ -28,4 +28,10 @@ flex: 0 1 calc(33.3% - 32px);
 background-image:none;
 background-color:#00c3ff;
 }
-
+input.ng-invalid.ng-touched {
+    border: 1px  red;
+ }
+.error{
+    margin-left: 20px;
+    color: red;
+}

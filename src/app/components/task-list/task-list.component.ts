@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { SessionService } from '../session.service'
 import {Session} from '../modal/session'
 import {Router} from '@angular/router';
 import {EmployeeService} from '../employee.service';
@@ -22,7 +21,7 @@ export class TaskListComponent implements OnInit {
   panelOpenState=false;
   status: boolean = false;
   sessionItems!: Session[];
-  constructor(private service:EmployeeService,private sessionService:SessionService, private dialog:MatDialog,private router:Router,
+  constructor(private service:EmployeeService,private dialog:MatDialog,private router:Router,
     private taskservice:TaskserviceService,private subtaskservice:SubtaskserviceService) { }
   ngOnInit(): void {
     this.tasks = this.taskservice.getTasks();
@@ -30,7 +29,7 @@ export class TaskListComponent implements OnInit {
     response1.subscribe(
       data=>this.subtasks=data
     );
-  //  this.sessionItems = this.sessionService.getTasks();
+  
     let response = this.service.getAllTasks();
     response.subscribe(
       data=>this.tasks=data
@@ -38,7 +37,7 @@ export class TaskListComponent implements OnInit {
      this.taskservice.setTasks(this.tasks);
      
      }
-     // console.log(this.tasks);
+    
   
   updateTask(i:number){
     this.dialog.open(TaskUpdateComponent, {
@@ -52,37 +51,10 @@ export class TaskListComponent implements OnInit {
         taskId:this.tasks[i].taskId
       }     
     });
-    //this.tasks = this.taskservice.getTasks();
-    //this.sessionItems = this.sessionService.getSessions();
+  
   }
-//  update(task:PrimaryTask){
-//      let response = this.service.updateTask(task);
-//         response.subscribe(data=>this.tasks=data);
-//  }
-   
-  // updateSession(i:number){
-  //   this.dialog.open(TaskUpdateComponent, {
-  //     width:'300px',
-  //     data: { taskname: this.sessionService.sessionItems[i].taskname, 
-  //              description: this.sessionService.sessionItems[i].description,
-  //              start: this.sessionService.sessionItems[i].start,
-  //              end: this.sessionService.sessionItems[i].end,  
-  //             index:i
-  //          },        
-  //   });
-   
-  // }
-    
 
-//     // let response = this.service.updateTask(task);
-//     //    response.subscribe(data=>this.tasks=data);
-//   }
-  deleteSession(session:Session){
-    if(this.sessionService.deleteSession(session)){
-      return this.sessionService.getSessions();
-    }
-    return this.sessionService.getSessions();
-  }
+  
   updateSubTask(i:number){
     this.dialog.open(SubtaskUpdateComponent, {
       width:'300px',    
@@ -102,9 +74,6 @@ export class TaskListComponent implements OnInit {
       let response = this.service.deleteSubTaskByid(id);
       response.subscribe(data=>this.subtasks=data);
       this.router.navigateByUrl('/task-list');
-    //  let respon = this.service.getAllSubTasksById(this.subtaskservice.getPrimaryid());
-    //  respon.subscribe(data=>this.subtasks=data);   
-    //this.ngOnInit(); 
   }
 
 addSubTask(id:number)
@@ -117,7 +86,6 @@ addSubTask(id:number)
    {
        let response = this.service.deleteTaskByid(id);
        response.subscribe(data=>this.tasks=data);
-       //this.router.navigateByUrl('/task-list');
    }
    addTask()
    {
@@ -126,13 +94,8 @@ addSubTask(id:number)
    }
    viewSubTasks(id:number)
    {
-     this.subtaskservice.setPrimaryid(id);
-   //  this.router.navigateByUrl('/subtask-list'); 
+        this.subtaskservice.setPrimaryid(id);
         let response = this.service.getAllSubTasksById(id);
         response.subscribe(data=>this.subtasks=data);    
-        // console.log(this.subtasks);
-        // this.subtaskservice.setSubtasks(this.subtasks);
-        // console.log(this.subtaskservice.getSubtasks());
-                                     
    }
 }

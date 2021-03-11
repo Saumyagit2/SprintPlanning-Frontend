@@ -3,22 +3,19 @@
     <mat-card-header>
       <mat-card-title class="align">Task</mat-card-title>
     </mat-card-header>
-
-    <form class="example-form  w-100 p-3" [formGroup]="sessionForm">
-     
+    <form class="example-form  w-100 p-3" [formGroup]="taskForm" >
       <mat-card-content>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="TaskName"  formControlName="taskname">
-        </mat-form-field>
-   <br>
+        </mat-form-field> 
+        <span class="error"  *ngIf = "taskname.invalid && taskname.touched">Taskname is required</span>
+        <br>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="Description"  formControlName="description" >
         </mat-form-field>
-        <br>
-    
-
+        <span class="error"  *ngIf = "description.invalid && description.touched">Description is required</span>
+        <br>    
       </mat-card-content>
-
       <button mat-stroked-button color="primary" class="btn-block" (click)="onClick()">Save</button>
 
     </form>

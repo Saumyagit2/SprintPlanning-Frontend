@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
-import { SessionService } from '../session.service'
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import {Session} from '../modal/session'
 import { TaskListComponent } from '../task-list/task-list.component';
@@ -20,14 +19,14 @@ export class AddTaskComponent implements OnInit
   tasks:any;
   message:any;
   task:PrimaryTask;
-  sessionForm!: FormGroup;
-  constructor(private router:Router,private sessionService:SessionService, private service:EmployeeService,
+  taskForm!: FormGroup;
+  constructor(private router:Router,private service:EmployeeService,
     private taskservice:TaskserviceService) {
       
      }
 
   ngOnInit(): void{
-    this.sessionForm = new FormGroup({
+    this.taskForm = new FormGroup({
      taskname : new FormControl('', Validators.required),
       description : new FormControl('', Validators.required),
       start : new FormControl(''),
@@ -36,30 +35,20 @@ export class AddTaskComponent implements OnInit
 
   }
   get taskname() {
-    return this.sessionForm.get('taskname') as FormControl;
+    return this.taskForm.get('taskname') as FormControl;
   }
-
   get description() {
-    return this.sessionForm.get('description') as FormControl;
+    return this.taskForm.get('description') as FormControl;
   }
-
-
   get start() {
-    return this.sessionForm.get('start') as FormControl;
+    return this.taskForm.get('start') as FormControl;
   }
   get end() {
-    return this.sessionForm.get('end') as FormControl;
+    return this.taskForm.get('end') as FormControl;
   }
   
-
-  /*onClick()
-  {
-    this.router.navigateByUrl('/task-list');
-  }*/
   onClick()
   {
-   
-    //console.log(this.user.name);
     const temp_task:PrimaryTask = {
       taskName : this.taskname.value,
       description : this.description.value,
@@ -72,13 +61,11 @@ export class AddTaskComponent implements OnInit
           
           console.log(this.message);
         })
-        let respon = this.service.getAllTasks();
+    let respon = this.service.getAllTasks();
         respon.subscribe(
           data=>this.tasks=data
           );
     this.taskservice.setTasks(this.tasks); 
     this.router.navigateByUrl('/task-list');
   }
-
- 
 }

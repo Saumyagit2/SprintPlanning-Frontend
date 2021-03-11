@@ -3,26 +3,28 @@
     <mat-card-header>
       <mat-card-title class="align">Sub Task</mat-card-title>
     </mat-card-header>
-
-    <form class="example-form  w-100 p-3" [formGroup]="sessionForm">
+    <form class="example-form  w-100 p-3" [formGroup]="taskForm">
      
       <mat-card-content>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="Sub TaskName"  formControlName="taskname">
         </mat-form-field>
-   <br>
+        <span class="error"  *ngIf = "taskname.invalid && taskname.touched">SubTaskname is required</span>
+        <br>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="Description"  formControlName="description" >
         </mat-form-field>
+        <span class="error"  *ngIf = "description.invalid && description.touched">Description is required</span>
         <br>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="Status"  formControlName="status" >
         </mat-form-field>
-        <br>
+        <span class="error"  *ngIf = "status.invalid && status.touched">Status is required</span>
         <br>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input matInput placeholder="Priority"  formControlName="priority" >
         </mat-form-field>
+        <span class="error"  *ngIf = "priority.invalid && priority.touched">Priority is required</span>
         <br>
         <mat-form-field class="example-full-width  w-100 p-3">
           <input type="date" matInput  placeholder="Start-Date"  formControlName="start">
@@ -31,6 +33,10 @@
         <mat-form-field class="example-full-width  w-100 p-3">
           <input type="date" matInput placeholder="End-Date" formControlName="end">
         </mat-form-field>
+        <mat-form-field class="example-full-width  w-100 p-3">
+          <input type="text" matInput placeholder="Estimated Hours" formControlName="estimatedhours">
+        </mat-form-field>
+         <span class="error"  *ngIf = "estimatedhours.invalid && estimatedhours.touched">Estimated Hours is required</span> 
         <br>
       
       </mat-card-content>
@@ -40,9 +46,5 @@
       <button mat-stroked-button color="primary" class="btn-block" (click)="addToList()">Save</button>
 
     </form>
-   
-   
-
   </mat-card>
-
 </div> 

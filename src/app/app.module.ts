@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material'
-// Importing social login module and google login provider.
+import{ ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular4-social-login';
 import {HttpClientModule} from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -71,7 +71,8 @@ let config = new AuthServiceConfig([
     MatIconModule,
     MatExpansionModule,
     MatAutocompleteModule,
-    MatChipsModule
+    MatChipsModule,
+    ConfirmationPopoverModule
 
   ],
   providers: [],

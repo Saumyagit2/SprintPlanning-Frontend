@@ -1,6 +1,6 @@
-export interface PrimaryTask {
-            taskName: string,
-        description: string,
-        employeeId:Number,
-    
+export interface PrimaryTask
+{
+    taskName: string,
+    description: string,
+    employeeId:Number,
 }

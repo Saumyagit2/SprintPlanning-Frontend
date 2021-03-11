@@ -1,12 +1,8 @@
 <div  class="cardList" >
   <img [src]="myImage" alt="image" width='520' height='520'>
   <mat-card class="box  shadow-lg p-3 mb-5 bg-white rounded w-25 p-4" style="text-align: center;">
-    <!-- <mat-card-header > 
-      <div mat-card-avatar class = "tp-header-image" ></div>
-      <mat-card-title>Sign In</mat-card-title>
-    </mat-card-header> -->
     <h3>Sign In</h3>
-  <br>
+   <br>
     <form class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width w-100 p-4">
@@ -24,25 +20,13 @@
        <br>
        <button class="btn1" href="/users/googleauth" style="text-transform:none"(click)="singInWithGoogle('Google');">
         <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-        Sign in with Google
+          Sign in with Google
        </button>
-     
-      <!-- <div class="row align">
-        <div class="col-md-3">
-          <button class="btn btn-outline-dark "role="button" style="text-transform:none" (click)="singInWithGoogle('Google');">
-            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-             Login with Google
-          </button>
-        </div>
-      </div> -->
+       
     </form>
   </mat-card>
-   </div>
+</div>
   
 
-<!-- <div *ngIf="user">
-  <img src="{{ user.photoUrl }}">
-  <h4>{{ user.name }}</h4>
-  <p>{{ user.email }}</p>
-</div> -->
+
 

@@ -6,14 +6,13 @@ justify-content: center;
 margin-top: 160px;
 }
 
-/* Column Gap */
 .cardList > * {
 box-sizing: border-box;
 }
 .cardList > *:not(:last-child) {
 margin-right: 32px;
 }
-/* Item sizing */
+
 .cardListItem {
 flex: 0 1 calc(33.3% - 32px);
 }
@@ -21,4 +20,8 @@ flex: 0 1 calc(33.3% - 32px);
 .align
 {
     margin-left: 44px;
+}
+.error{
+    margin-left: 20px;
+    color: red;
 }
