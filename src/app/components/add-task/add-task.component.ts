@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Session} from '../modal/session'
-import { TaskListComponent } from '../task-list/task-list.component';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { PrimaryTask } from '../modal/PrimaryTask';
 import {EmployeeService} from '../employee.service';
-import { ThrowStmt } from '@angular/compiler';
-import {SubTaskComponent} from '../sub-task/sub-task.component';
 import {TaskserviceService} from '../../services/taskservice.service';
 @Component({
   selector: 'app-add-task',

@@ -1,8 +1,8 @@
 export interface SubTask {
     subtaskName: string,
     description: string,
-    primarytaskId:Number,
-    estimatedHours:Number,
+    primarytaskId:number,
+    estimatedHours:number,
     status: string,
     priority:string,
     startDate: string,

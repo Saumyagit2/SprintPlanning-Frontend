@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Session} from '../modal/session'
-import { SubtaskListComponent} from '../subtask-list/subtask-list.component';
-import { ThrowStmt } from '@angular/compiler';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 import {SubTask} from '../modal/SubTask';
 import {EmployeeService} from '../employee.service';
 import {SubtaskserviceService} from '../../services/subtaskservice.service';

@@ -7,7 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {RouterModule,Routes} from '@angular/router'
+import {RouterModule} from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
@@ -22,7 +22,6 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskUpdateComponent } from './components/task-update/task-update.component';
 import { SubTaskComponent } from './components/sub-task/sub-task.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {FormGroup} from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
 
 

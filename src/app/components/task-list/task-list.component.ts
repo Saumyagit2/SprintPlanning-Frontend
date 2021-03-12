@@ -4,8 +4,6 @@ import {Session} from '../modal/session'
 import {Router} from '@angular/router';
 import {EmployeeService} from '../employee.service';
 import {TaskUpdateComponent} from '../task-update/task-update.component'
-import { PrimaryTask } from '../modal/PrimaryTask';
-import {SubTaskComponent} from '../sub-task/sub-task.component';
 import { TaskserviceService} from '../../services/taskservice.service';
 import {SubtaskserviceService} from '../../services/subtaskservice.service';
 import {SubtaskUpdateComponent} from '../subtask-update/subtask-update.component';

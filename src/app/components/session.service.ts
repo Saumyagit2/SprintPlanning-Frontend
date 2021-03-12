@@ -31,7 +31,7 @@ export class SessionService {
            },
      ]
      
-  constructor() { }
+
   getSessions() {
     return this.sessionItems;
   }

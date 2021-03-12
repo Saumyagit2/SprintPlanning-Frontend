@@ -1,11 +1,10 @@
 import { Component,Inject, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Session} from '../modal/session'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { TaskListComponent } from '../task-list/task-list.component';
-import { ThrowStmt } from '@angular/compiler';
-import { PrimaryTask } from '../modal/PrimaryTask';
+
 import {EmployeeService} from '../employee.service';
 import {TaskserviceService} from '../../services/taskservice.service';
 
@@ -17,8 +16,6 @@ import {TaskserviceService} from '../../services/taskservice.service';
 
 export class TaskUpdateComponent implements OnInit {
  sessionForm!: FormGroup;
-//   constructor(@Inject(MAT_DIALOG_DATA) public data: {taskname: string,description:string,start:string,end:string,index:number}, 
-//   private sessionService: SessionService, private dialogRef:MatDialogRef<TaskListComponent>) { }
 task:any;
 tasks:any;
 

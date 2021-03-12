@@ -1,10 +1,10 @@
 import { Component,Inject, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Session} from '../modal/session'
+import {FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { SubtaskListComponent } from '../subtask-list/subtask-list.component';
-import { ThrowStmt } from '@angular/compiler';
+
 import {EmployeeService} from '../employee.service'
 import {SubTask} from '../modal/SubTask'
 import {SubtaskserviceService} from '../../services/subtaskservice.service';
@@ -19,9 +19,6 @@ export class SubtaskUpdateComponent implements OnInit {
   taskForm!: FormGroup;
   subtask :any;
   subtasks:any;
-  //constructor(@Inject(MAT_DIALOG_DATA) public data: {taskname: string,description:string,start:string,end:string,index:number}, 
-  //private sessionService: SessionService,private router:Router, private dialogRef:MatDialogRef<SubtaskListComponent>) { }
-
   
   constructor(@Inject(MAT_DIALOG_DATA) public data: {subtaskName: string,description:string,status:string,priority:number,startDate:string,endDate:string,index:number,subtaskId:number}
   ,private dialogRef:MatDialogRef<SubtaskListComponent>,private service:EmployeeService,private router:Router,private subtaskservice:SubtaskserviceService){}
@@ -82,9 +79,7 @@ export class SubtaskUpdateComponent implements OnInit {
        let response = this.service.updateSubTask(this.subtask);
        response.subscribe(data=>this.subtasks=data);
        window.location.reload();
-    //   this.router.navigateByUrl('/subtask-list/12');
        this.dialogRef.close();
-       //this.router.navigateByUrl('/task-list');
     }
 
 

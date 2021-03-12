@@ -1,14 +1,12 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Component, ElementRef, Input, ViewChild,OnInit} from '@angular/core';
+import {Component, ElementRef, ViewChild,OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 import {TaskserviceService} from '../../services/taskservice.service';
 import {SubtaskserviceService} from '../../services/subtaskservice.service';
 import {PrimaryTask} from '../modal/PrimaryTask';
-import {EmployeeService} from '../employee.service';;
+import {EmployeeService} from '../employee.service';
 
 @Component({
   selector: 'app-add-dependency',
@@ -43,11 +41,6 @@ export class AddDependencyComponent implements OnInit {
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
-    const value = event.value;
-  
-    if ((value || '').trim()) {
-     
-    }
 
     if (input) {
       input.value = '';

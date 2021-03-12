@@ -9,7 +9,6 @@ export class SubtaskserviceService {
 
   primaryid:any;
 
-  constructor() { }
 
   getPrimaryid()
   {

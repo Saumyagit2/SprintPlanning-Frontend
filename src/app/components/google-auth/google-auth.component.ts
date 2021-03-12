@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AuthService, GoogleLoginProvider } from 'angular4-social-login';
-import {MatCardModule} from '@angular/material/card';
-import { MatDialog } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
+import {  FormGroup} from '@angular/forms';
 import { EmployeeService} from '../employee.service'
 @Component({
   selector: 'app-google-auth',
